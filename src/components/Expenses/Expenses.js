@@ -1,8 +1,7 @@
 import "./Expenses.css";
 import { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "./ExpensesFilter";
-
+import ExpensesList from "./ExpensesList";
 const Expenses = (props) => {
   const [userSelectedVal, setSelectedVal] = useState("2022");
 
@@ -10,27 +9,18 @@ const Expenses = (props) => {
     setSelectedVal(selectedVal);
   };
 
-  const filteredExpenses = props.expenseAraay.filter((expenses) => {
-    return userSelectedVal === expenses.date.getFullYear().toString();
-  });
-  console.log(props.expenseAraay[0].title);
   return (
     <div className="expenses">
       <ExpensesFilter
         selected={userSelectedVal}
         onSelectValue={onSelectHandler}
       ></ExpensesFilter>
-      {filteredExpenses.map((expenses) => {
-        return (
-          <ExpenseItem
-            key={expenses.id}
-            title={expenses.title}
-            amount={expenses.amount}
-            date={expenses.date}
-          ></ExpenseItem>
-        );
-      })}
-      ;
+
+      <ExpensesList
+        yearSelected={userSelectedVal}
+        expenseArr={props.expenseAraay}
+      ></ExpensesList>
+
       {/* <ExpenseItem
         title={props.expenseAraay[0].title}
         amount={props.expenseAraay[0].amount}
