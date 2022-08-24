@@ -9,6 +9,10 @@ const Expenses = (props) => {
   const onSelectHandler = (selectedVal) => {
     setSelectedVal(selectedVal);
   };
+
+  const filteredExpenses = props.expenseAraay.filter((expenses) => {
+    return userSelectedVal === expenses.date.getFullYear().toString();
+  });
   console.log(props.expenseAraay[0].title);
   return (
     <div className="expenses">
@@ -16,7 +20,7 @@ const Expenses = (props) => {
         selected={userSelectedVal}
         onSelectValue={onSelectHandler}
       ></ExpensesFilter>
-      {props.expenseAraay.map((expenses) => {
+      {filteredExpenses.map((expenses) => {
         return (
           <ExpenseItem
             key={expenses.id}

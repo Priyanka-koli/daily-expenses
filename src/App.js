@@ -7,7 +7,7 @@ let DUMMY_EXPENSES = [
     id: "el1",
     title: "Toilet Paper",
     amount: 94.12,
-    date: new Date(2022, 2, 12),
+    date: new Date(2020, 2, 12),
   },
   {
     id: "el2",
