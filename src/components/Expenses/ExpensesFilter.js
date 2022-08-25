@@ -4,8 +4,6 @@ import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
   const onSelectHandler = (e) => {
-    console.log(e.target.value);
-
     props.onSelectValue(e.target.value);
   };
 
