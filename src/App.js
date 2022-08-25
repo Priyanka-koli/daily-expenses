@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div>
       <NewExpense onSaveExpData={onSaveExpHandler} />
-      <Expenses expenseAraay={expense}></Expenses>
+      <Expenses expenseAraay={expense} />
     </div>
   );
 };
