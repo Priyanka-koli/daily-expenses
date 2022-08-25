@@ -3,7 +3,7 @@ import { useState } from "react";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
 import ExenesesTotal from "./ExpensesTotal";
-
+import Chart from "../Chart/Chart";
 const Expenses = (props) => {
   const [userSelectedVal, setSelectedVal] = useState("2022");
 
@@ -29,21 +29,10 @@ const Expenses = (props) => {
         selected={userSelectedVal}
         onSelectValue={onSelectHandler}
       ></ExpensesFilter>
-
+      <Chart expenseMonthArr={filteredExpenses}></Chart>
       <ExpensesList expenseArr={filteredExpenses}></ExpensesList>
 
       <ExenesesTotal totalAmount={totalAmount}></ExenesesTotal>
-
-      {/* <ExpenseItem
-        title={props.expenseAraay[0].title}
-        amount={props.expenseAraay[0].amount}
-        date={props.expenseAraay[0].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={props.expenseAraay[1].title}
-        amount={props.expenseAraay[1].amount}
-        date={props.expenseAraay[1].date}
-      ></ExpenseItem> */}
     </div>
   );
 };
