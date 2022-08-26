@@ -20,7 +20,17 @@
   width: 20rem;
   max-width: 100%;
 }
+.new-expense__control input.invalid {
+  border: 2px solid crimson;
+  background-color: antiquewhite;
+}
 
 .new-expense__actions {
   text-align: right;
+}
+
+.form-error p.validation-error {
+  color: rgb(167, 14, 14);
+  font-size: Bolder;
+  text-transform: uppercase;
 }
